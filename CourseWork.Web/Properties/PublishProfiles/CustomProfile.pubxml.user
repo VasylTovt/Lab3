@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAbLd0yQneeUyfn9juqLD76gAAAAACAAAAAAAQZgAAAAEAACAAAACWp0LWVTM+4y9k2ze3FwNYqdk/SqeFuCou6WeMbaZiewAAAAAOgAAAAAIAACAAAADmOgPjCkUgAwpDMA4Xzxov10UJJjKKRwgufTVSCgBi6SAAAACkopTfpf2XeHmZ3FiZEaqW17AJ/E4+icQ9FqFRQNoSUUAAAAB37yZXIEB9y0BXh5T+ZACJ67eYv8AuT+G9LluytTknjMUVLL2k77VkQ9ajpytsV4iWGEvY+Qj7gkPZIxD4eTxX</EncryptedPassword>
+    <_PublishTargetUrl>ftp://ftp-eu.site4now.net/site1</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>04/12/2019 14:02:56</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>04/12/2019 14:02:56</publishTime>
+    </File>
+    <File Include="CourseWork.Web.deps.json">
+      <publishTime>04/12/2019 14:46:54</publishTime>
+    </File>
+    <File Include="CourseWork.Web.dll">
+      <publishTime>04/12/2019 14:46:49</publishTime>
+    </File>
+    <File Include="CourseWork.Web.pdb">
+      <publishTime>04/12/2019 14:46:49</publishTime>
+    </File>
+    <File Include="CourseWork.Web.runtimeconfig.json">
+      <publishTime>04/12/2019 14:46:54</publishTime>
+    </File>
+    <File Include="Newtonsoft.Json.dll">
+      <publishTime>11/27/2018 18:07:34</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>04/12/2019 14:46:54</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseWork.App.Views.LoginView"
+             xmlns:vm="clr-namespace:CourseWork.App.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Entry Text="{Binding Email}" Keyboard="Email" Placeholder="email"></Entry>
+        <Entry Text="{Binding Password}" Placeholder="password" IsPassword="True"></Entry>
+
+        <Button Command="{Binding LoginCommand}" Text="Login"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,14 @@
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\bin\Release\netcoreapp2.1\CourseWork.Web.deps.json
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\bin\Release\netcoreapp2.1\CourseWork.Web.runtimeconfig.json
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\bin\Release\netcoreapp2.1\CourseWork.Web.runtimeconfig.dev.json
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\bin\Release\netcoreapp2.1\CourseWork.Web.dll
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\bin\Release\netcoreapp2.1\CourseWork.Web.pdb
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\obj\Release\netcoreapp2.1\CourseWork.Web.csprojAssemblyReference.cache
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\obj\Release\netcoreapp2.1\CourseWork.Web.csproj.CoreCompileInputs.cache
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\obj\Release\netcoreapp2.1\CourseWork.Web.RazorAssemblyInfo.cache
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\obj\Release\netcoreapp2.1\CourseWork.Web.RazorAssemblyInfo.cs
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\obj\Release\netcoreapp2.1\CourseWork.Web.AssemblyInfoInputs.cache
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\obj\Release\netcoreapp2.1\CourseWork.Web.AssemblyInfo.cs
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\obj\Release\netcoreapp2.1\CourseWork.Web.RazorTargetAssemblyInfo.cache
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\obj\Release\netcoreapp2.1\CourseWork.Web.dll
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork.Web\obj\Release\netcoreapp2.1\CourseWork.Web.pdb
