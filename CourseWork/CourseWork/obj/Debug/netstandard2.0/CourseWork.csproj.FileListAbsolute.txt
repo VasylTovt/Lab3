@@ -1,0 +1,15 @@
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\bin\Debug\netstandard2.0\CourseWork.deps.json
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\bin\Debug\netstandard2.0\CourseWork.dll
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\bin\Debug\netstandard2.0\CourseWork.pdb
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\CourseWork.csprojAssemblyReference.cache
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\CourseWork.csproj.CoreCompileInputs.cache
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\CourseWork.AssemblyInfoInputs.cache
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\CourseWork.AssemblyInfo.cs
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\CourseWork.dll
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\CourseWork.pdb
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\Views\RegisterPage.xaml.g.cs
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\Views\Login\LoginPage.xaml.g.cs
+C:\Users\lotziko\Dropbox\university\CourseWork\CourseWork\CourseWork\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs

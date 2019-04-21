@@ -4,7 +4,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using CourseWork.Web.Context;
 using CourseWork.Web.Models;
+using CourseWork.Web.Validator;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -16,25 +19,81 @@ namespace CourseWork.Web.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private List<User> people = new List<User>
-        {
-            new User { Email="admin@gmail.com", Password="12345", Role = "admin" },
-            new User { Email="qwerty", Password="55555", Role = "user" }
-        };
+        private readonly RailwayContext db;
 
-        [HttpPost("token")]
-        public async Task Token([FromBody] LoginModel model)
+        public UserController(RailwayContext context)
+        {
+            db = context;
+        }
+
+        [Authorize]
+        [HttpGet("getUsers")]
+        public async Task GetUsers()
+        {
+            if (db.Users.FirstOrDefault(u => (u.Email == User.Identity.Name)).Role == "admin")
+            {
+                Response.StatusCode = 200;
+                await Response.WriteAsync(JsonConvert.SerializeObject(db.Users.ToList()));
+            }
+        }
+
+        [HttpPost("register")]
+        public async Task Register([FromBody] RegisterModel model)
+        {
+            var email = model.Email;
+            var password = model.Password;
+            var confirmPassword = model.ConfirmPassword;
+
+            if (!EmailValidator.IsValid(email))
+            {
+                Response.StatusCode = 400;
+                await Response.WriteAsync("Email is in invalid format");
+                return;
+            }
+            
+            if (db.Users.SingleOrDefault(u => u.Email == email) != null)
+            {
+                Response.StatusCode = 400;
+                await Response.WriteAsync("Email is already in database");
+                return;
+            }
+
+            if (password != confirmPassword)
+            {
+                Response.StatusCode = 400;
+                await Response.WriteAsync("Confirm password is wrong");
+                return;
+            }
+
+            db.Users.Add(new User() { Email = email, Password = password });
+            db.SaveChanges();
+
+            Response.StatusCode = 200;
+            await Response.WriteAsync("Register succeded!");
+        }
+
+        [HttpPost("login")]
+        public async Task Login([FromBody] LoginModel model)
         {
             var email = model.Email;
             var password = model.Password;
 
-            var identity = GetIdentity(email, password);
-            if (identity == null)
+            var user = db.Users.FirstOrDefault(x => x.Email == email);
+
+            if (user == null)
             {
                 Response.StatusCode = 400;
-                await Response.WriteAsync("Invalid username or password.");
+                await Response.WriteAsync(LoginStatus.WRONG_EMAIL + "");
                 return;
             }
+            else if (user.Password != password)
+            {
+                Response.StatusCode = 400;
+                await Response.WriteAsync(LoginStatus.WRONG_PASSWORD + "");
+                return;
+            }
+
+            var identity = GetIdentity(user);
 
             var now = DateTime.UtcNow;
             
@@ -47,34 +106,33 @@ namespace CourseWork.Web.Controllers
                     signingCredentials: new SigningCredentials(AuthOptions.GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
             var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
 
-            var response = new
+            Response.StatusCode = 200;
+            await Response.WriteAsync(encodedJwt);
+            /*var response = new
             {
                 access_token = encodedJwt,
                 username = identity.Name
             };
-
-            // сериализация ответа
+            
             Response.ContentType = "application/json";
-            await Response.WriteAsync(JsonConvert.SerializeObject(response, new JsonSerializerSettings { Formatting = Formatting.Indented }));
+            await Response.WriteAsync(JsonConvert.SerializeObject(response, new JsonSerializerSettings { Formatting = Formatting.Indented }));*/
         }
 
-        private ClaimsIdentity GetIdentity(string email, string password)
+        private ClaimsIdentity GetIdentity(User user)
         {
-            User user = people.FirstOrDefault(x => x.Email == email && x.Password == password);
             if (user != null)
             {
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email),
-                    new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role)
+                    //new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role)
                 };
                 ClaimsIdentity claimsIdentity =
                 new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,
                     ClaimsIdentity.DefaultRoleClaimType);
                 return claimsIdentity;
             }
-
-            // если пользователя не найдено
+            
             return null;
         }
     }

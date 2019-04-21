@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CourseWork.App.Views.LoginPage.xaml", "Views/LoginPage.xaml", typeof(global::CourseWork.App.Views.LoginView))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("CourseWork.App.Views.LoginPage.xaml", "Views/LoginPage.xaml", typeof(global::CourseWork.App.Views.LoginPage))]
 
 namespace CourseWork.App.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\LoginPage.xaml")]
-    public partial class LoginView : global::Xamarin.Forms.ContentPage {
+    public partial class LoginPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(LoginView));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(LoginPage));
         }
     }
 }

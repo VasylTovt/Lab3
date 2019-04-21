@@ -18,7 +18,8 @@ namespace CourseWork.App.ViewModels
             {
                 return new Command(async () =>
                 {
-                    var isSuccess = await _apiServices.LoginAsync(Email, Password);
+                    var result = await _apiServices.LoginAsync(Email, Password);
+                    await Application.Current.MainPage.DisplayAlert("Result", result, null, "Cancel");
                 });
             }
         }

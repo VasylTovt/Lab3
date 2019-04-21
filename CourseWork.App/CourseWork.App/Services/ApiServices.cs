@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,11 +42,11 @@ namespace CourseWork.App.Services
             }
         }
 
-        public async Task<bool> LoginAsync(string email, string password)
+        public async Task<string> LoginAsync(string email, string password)
         {
             try
             {
-                using (var client = new HttpClient())
+                using (var client = new HttpClient() { Timeout = TimeSpan.FromSeconds(5) })
                 {
                     var model = new LoginModel()
                     {
@@ -60,12 +61,12 @@ namespace CourseWork.App.Services
 
                     var response = await client.PostAsync(url + "/api/user/token", content);
 
-                    return response.IsSuccessStatusCode;
+                    return response.StatusCode + "";
                 }
             }
-            catch
+            catch (Exception e)
             {
-                return false;
+                return e.Message;
             }
         }
 

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CourseWork.Views.LoginPage"
+             xmlns:vm="clr-namespace:CourseWork.ViewModels"
+             xmlns:Behaviors="clr-namespace:CourseWork.Behaviors"
+             xmlns:Views="clr-namespace:CourseWork.Views">
+    
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Margin="30" VerticalOptions="CenterAndExpand">
+
+        <Views:LoginEntry Text="{Binding Email}" LoginStatus="{Binding LoginStatus}" HorizontalOptions="Center" WidthRequest="250" Keyboard="Email" Placeholder="E-Mail"></Views:LoginEntry>
+        <Views:PasswordEntry Text="{Binding Password}" LoginStatus="{Binding LoginStatus}" HorizontalOptions="Center" WidthRequest="250" Placeholder="Password" IsPassword="True"></Views:PasswordEntry>
+
+        <StackLayout Orientation="Vertical" Margin="30" HorizontalOptions="Center">
+            
+            <Button Command="{Binding LoginCommand}" Text="Log in"></Button>
+            <Button Command="{Binding GotoRegister}" Text="Create an account">
+
+            </Button>
+        </StackLayout>
+
+    </StackLayout>
+    
+</ContentPage>
